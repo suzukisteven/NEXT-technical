@@ -1,0 +1,48 @@
+<h1 class="mt-3">Property Search</h1>
+<p>Search for Homes</p>
+<hr class="my-4">
+
+<%= form_for_filterrific @filterrific do |f| %>
+
+  <div>
+    Search
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed form-control mb-3'
+    ) %>
+  </div>
+  <div>
+    Address
+    <%= f.select(
+      :with_address,
+      @filterrific.select_options[:with_address],
+      { include_blank: '- Any -' },
+      class: 'form-control mb-3'
+    ) %>
+  </div>
+  <div>
+    Is the property rented?
+    <%= f.label :with_rented do %>
+      <%= f.check_box(:with_rented, class: 'mb-3') %>
+    <% end %>
+  </div>
+  <div>
+    Sorted by
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  </div>
+  <div>
+    <%= link_to(
+      'Reset Filters',
+      reset_filterrific_url,
+      class: 'btn btn-primary mt-3'
+    ) %>
+  </div>
+
+  <%= render_filterrific_spinner %>
+<% end %>
+
+<%= render(
+  partial: 'search/list',
+  locals: { houses: @houses }
+) %>
