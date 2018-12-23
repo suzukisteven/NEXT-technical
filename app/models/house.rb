@@ -80,8 +80,8 @@ class House < ApplicationRecord
   def self.options_for_sorted_by
     [
       ['Name (A-Z)', 'name_asc'],
-      ['Address (Newest first)', 'created_at_desc'],
-      ['Address (Oldest first)', 'created_at_asc'],
+      ['Created At (Newest first)', 'created_at_desc'],
+      ['Created At (Oldest first)', 'created_at_asc'],
       ['Rental Status (Rented)', 'rented_desc'],
       ['Rental Status (Not rented)', 'rented_asc']
     ]

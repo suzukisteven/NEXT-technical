@@ -15,7 +15,7 @@
   </div>
 
   <div>
-    Address:
+    Address
     <%= f.select(
       :with_address,
       @filterrific.select_options[:with_address],
@@ -25,7 +25,7 @@
   </div>
 
   <div>
-    Property Rented?
+    Rental Status
     <%= f.select(
       :with_rented,
       @filterrific.select_options[:with_rented],
@@ -35,7 +35,7 @@
   </div>
 
   <div>
-    Sorted by
+    Sort results by: 
     <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
   </div>
 
