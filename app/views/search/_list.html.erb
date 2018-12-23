@@ -1,14 +1,14 @@
 <div id="filterrific_results" class="mt-5">
 
-  <div class="jumbotron">
+  <div class="alert alert-secondary">
     <%= page_entries_info houses %>
   </div>
 
   <table class="table">
     <tr>
       <th><%= filterrific_sorting_link(@filterrific, :name) %></th>
-      <th><%= filterrific_sorting_link(@filterrific, :address) %></th>
-      <th><%= filterrific_sorting_link(@filterrific, :rented) %></th>
+      <th>Address</th>
+      <th>Rented</th>
     </tr>
     <% houses.each do |house| %>
       <tr>

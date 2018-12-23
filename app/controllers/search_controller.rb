@@ -8,13 +8,13 @@ class SearchController < ApplicationController
       params[:filterrific],
       select_options: {
         sorted_by: House.options_for_sorted_by,
-        with_name: House.options_for_select,
+        search_query: House.options_for_select,
         with_address: House.options_for_select,
-        with_rented: House.options_for_select
+        with_rented: House.options_for_rented_status
       },
       # persistence_id: 'shared_key',
       # default_filter_params: {},
-      available_filters: [:with_name, :with_address, :with_rented],
+      available_filters: [:with_name, :with_address, :with_rented, :search_query, :sorted_by],
       sanitize_params: true
     ) or return
 

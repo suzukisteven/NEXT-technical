@@ -1,4 +1,4 @@
-<h1 class="mt-3">Property Search</h1>
+<h1 class="mt-3">PropertyGenie</h1>
 <p>Search for Homes</p>
 <hr class="my-4">
 
@@ -9,11 +9,13 @@
     <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
     <%= f.text_field(
       :search_query,
-      class: 'filterrific-periodically-observed form-control mb-3'
+      class: 'filterrific-periodically-observed form-control mb-3',
+      placeholder: 'Enter Name or Address...'
     ) %>
   </div>
+
   <div>
-    Address
+    Address:
     <%= f.select(
       :with_address,
       @filterrific.select_options[:with_address],
@@ -21,16 +23,22 @@
       class: 'form-control mb-3'
     ) %>
   </div>
+
   <div>
-    Is the property rented?
-    <%= f.label :with_rented do %>
-      <%= f.check_box(:with_rented, class: 'mb-3') %>
-    <% end %>
+    Property Rented?
+    <%= f.select(
+      :with_rented,
+      @filterrific.select_options[:with_rented],
+      { include_blank: '- Any -' },
+      class: 'form-control mb-3'
+    ) %>
   </div>
+
   <div>
     Sorted by
     <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
   </div>
+
   <div>
     <%= link_to(
       'Reset Filters',
