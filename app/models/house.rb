@@ -95,4 +95,7 @@ class House < ApplicationRecord
     [true, false]
   end
 
+  # Define pagination amount per page
+  self.per_page = 10
+
 end

@@ -1,6 +1,6 @@
 <div id="filterrific_results" class="mt-5">
 
-  <div class="alert alert-secondary">
+  <div class="alert alert-secondary mb-3">
     <%= page_entries_info houses %>
   </div>
 
@@ -8,7 +8,7 @@
     <tr>
       <th><%= filterrific_sorting_link(@filterrific, :name) %></th>
       <th>Address</th>
-      <th>Rented</th>
+      <th>Rented?</th>
     </tr>
     <% houses.each do |house| %>
       <tr>
@@ -21,4 +21,4 @@
 
 </div>
 
-<%= will_paginate houses %>
+<%= will_paginate(houses, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
